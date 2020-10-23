@@ -17,5 +17,5 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Printf("E agora (%v) voltou a ser do tipo: (%T).\n", y, y)
+	fmt.Printf("Mas (%v) voltou a ser do tipo: (%T).\n", y, y)
 }
