@@ -5,6 +5,7 @@ import "fmt"
 func main() {
 	sm1 := [][][][]int{
 
+		// 0
 		[][][]int{
 			[][]int{
 				[]int{1, 2, 3},
@@ -13,6 +14,7 @@ func main() {
 				[]int{4, 5, 6},
 			},
 		},
+		// 1
 		[][][]int{
 			[][]int{
 				[]int{7, 8, 9},
@@ -23,6 +25,16 @@ func main() {
 		},
 	}
 
-	fmt.Println(sm1)
-	//fmt.Println(len(sm1))
+	fmt.Print(sm1[0][0][0][0], "-") //result: 1
+	fmt.Print(sm1[0][0][0][1], "-") //result: 2
+	fmt.Println(sm1[0][0][0][2])    //result: 3
+
+	fmt.Println(sm1[0][1][0][0]) //result: 4
+	fmt.Println(sm1[1][0][0][0]) //result: 7
+	fmt.Println(sm1[1][1][0][0]) //result: 10
+
+	/*	fmt.Println(sm1[0][0])
+		fmt.Println(sm1[0][1])
+		fmt.Println(sm1[1][0])
+		fmt.Println(sm1[1][1])  */
 }
