@@ -19,13 +19,6 @@ type capacity struct {
 
 func main() {
 
-	hd2 := harddisk{
-		company: "HP",
-		price:   889.65,
-		qtd:     156,
-		avaible: true,
-	}
-
 	hd1 := capacity{
 		harddisk: harddisk{
 			company: "Samsung",
@@ -38,7 +31,36 @@ func main() {
 		tera: true,
 	}
 
-	fmt.Println(hd2)
-	fmt.Println(hd1.company)
+	hd2 := capacity{
+		harddisk: harddisk{
+			company: "HP",
+			price:   889.65,
+			qtd:     205,
+			avaible: true,
+		},
+		cap:  500,
+		giga: true,
+		tera: false,
+	}
+
+	fmt.Println("\tFabricante:", hd1.company,
+		"\n\tPreço:R$", hd1.price,
+		"\n\tQuantidade:", hd1.qtd,
+		"\n\tDisponível:", hd1.avaible,
+		"\n\tCapacidade:", hd1.cap,
+		"\n\tGigabyte:", hd1.giga,
+		"\n\tTerabyte:", hd1.tera,
+	)
+
+	fmt.Println("")
+
+	fmt.Println("\tFabricante:", hd2.company,
+		"\n\tPreço:R$", hd2.price,
+		"\n\tQuantidade:", hd2.qtd,
+		"\n\tDisponível:", hd2.avaible,
+		"\n\tCapacidade:", hd2.cap,
+		"\n\tGigabyte:", hd2.giga,
+		"\n\tTerabyte:", hd2.tera,
+	)
 
 }
