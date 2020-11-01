@@ -1,6 +1,5 @@
-/*
-	agrupamento de dados - Array - Slice
-*/
+/*agrupamento de dados - Array - Slice*/
+
 package main
 
 import (
