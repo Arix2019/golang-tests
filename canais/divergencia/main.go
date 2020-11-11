@@ -21,10 +21,10 @@ func main() {
 	go sendNumbers(22, c1)
 	go receiveNumbers(c1, c2)
 
+	// Por fim, exibe na tela o range recebido do 2º canal.
 	for v := range c2 {
 		fmt.Println("Channel two range:", v)
 	}
-
 }
 
 // envia um range de números para o primeiro canal ('c1')
@@ -33,6 +33,13 @@ func sendNumbers(n int, sendC1 chan int) {
 		sendC1 <- x
 	}
 	close(sendC1)
+}
+
+//envia uma sequencia aleatoria para func receiveNumbers()
+func trabalho(t int) int {
+	time.Sleep(time.Millisecond * time.Duration(rand.Intn(1500)))
+	// vai retornar o range de numeros da função sendNumbers() para o '2º canal'.
+	return t
 }
 
 //(2º canal) recebe o valor passado pela func sendNumbers() - (1ºcanal)
@@ -47,11 +54,4 @@ func receiveNumbers(receiveC1, receiveC2 chan int) {
 	}
 	wg.Wait()
 	close(receiveC2)
-}
-
-//envia uma sequencia aleatoria para func receiveNumbers()
-func trabalho(t int) int {
-	time.Sleep(time.Millisecond * time.Duration(rand.Intn(1500)))
-	// retorna o range de numeros da função sendNumbers()
-	return t
 }
