@@ -17,6 +17,6 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	log.Printf("handler started.")
 	defer log.Printf("handler ended.")
 
-	time.Sleep(5 * time.Second) // aguarda 5 seg. e finaliza a conexão
+	time.Sleep(3 * time.Second) // aguarda 3 seg. e finaliza a conexão
 	fmt.Fprintln(w, "Bye!")
 }
