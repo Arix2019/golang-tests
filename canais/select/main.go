@@ -1,3 +1,4 @@
+// *Funcionou corremente quando foi 'retirado' o 'close(par) e close(impar) da função sendNumbers()'
 package main
 
 import "fmt"
@@ -22,8 +23,8 @@ func sendNumbers(par, impar chan int, quit chan bool) {
 			impar <- x
 		}
 	}
-	close(par)
-	close(impar)
+	//close(par)
+	//close(impar)
 	quit <- true
 }
 
